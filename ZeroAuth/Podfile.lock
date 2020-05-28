@@ -1,0 +1,16 @@
+PODS:
+  - CieloOAuth (1.0.6)
+
+DEPENDENCIES:
+  - CieloOAuth
+
+SPEC REPOS:
+  trunk:
+    - CieloOAuth
+
+SPEC CHECKSUMS:
+  CieloOAuth: 49dea63c3bbb70c5de2828812fc4ae502ea5f613
+
+PODFILE CHECKSUM: ab27f7022e24a649892c4e6a00f295953cf9b753
+
+COCOAPODS: 1.9.1
