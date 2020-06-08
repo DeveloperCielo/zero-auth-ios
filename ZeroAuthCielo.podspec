@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
-  spec.name         = "CieloZeroAuth"
-  spec.version      = "0.0.1"
+  spec.name         = "ZeroAuthCielo"
+  spec.version      = "0.0.3"
   spec.summary      = "Biblioteca de validação de cartões de crédito"
 
   spec.description  = <<-DESC
@@ -11,19 +11,15 @@ Pod::Spec.new do |spec|
   spec.homepage     = "https://github.com/DeveloperCielo/zero-auth-ios"
 
   spec.license      = "MIT"
-  # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-
 
   spec.author             = { "Jeferson F. Nazario" => "jefnazario@gmail.com" }
-  # Or just: spec.author    = "Jeferson F. Nazario"
-  # spec.authors            = { "Jeferson F. Nazario" => "jefnazario@gmail.com" }
   spec.social_media_url   = "https://twitter.com/jefnazario"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.platform     = :ios, "9.0"
-  spec.source       = { :git => "https://github.com/DeveloperCielo/zero-auth-ios.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/DeveloperCielo/zero-auth-ios.git", :tag => "0.0.2" }
   spec.swift_version = "5.0"
-
+  spec.ios.deployment_target = '9.0'
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.source_files  = "ZeroAuth/ZeroAuth/**/*.{h,m,swift,framework}"
