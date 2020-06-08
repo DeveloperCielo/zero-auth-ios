@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.platform     = :ios, "9.0"
-  spec.source       = { :git => "https://github.com/DeveloperCielo/zero-auth-ios.git", :tag => "0.0.2" }
+  spec.source       = { :git => "https://github.com/DeveloperCielo/zero-auth-ios.git", :tag => "#{spec.version}" }
   spec.swift_version = "5.0"
   spec.ios.deployment_target = '9.0'
 
