@@ -22,11 +22,12 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        zeroAuth = 
+//        zeroAuth = ZeroAuth.instance(merchanId: "", clientId: "", clientSecret: "", environment: .sandbox)
     }
 
     
     @IBAction func verifyTouched(_ sender: UIButton) {
+//        let request = ZeroAuthRequest()
         
     }
 }
