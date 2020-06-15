@@ -12,6 +12,6 @@
 
 #import "ZeroAuth.h"
 
-FOUNDATION_EXPORT double CieloZeroAuthVersionNumber;
-FOUNDATION_EXPORT const unsigned char CieloZeroAuthVersionString[];
+FOUNDATION_EXPORT double ZeroAuthCieloVersionNumber;
+FOUNDATION_EXPORT const unsigned char ZeroAuthCieloVersionString[];
 

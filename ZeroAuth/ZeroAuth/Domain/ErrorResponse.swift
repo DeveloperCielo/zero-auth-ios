@@ -7,10 +7,10 @@
 //
 
 @objc public class ErrorResponse: NSObject, Codable {
-    var code: String?
-    var message: String?
+    public var code: String?
+    public var message: String?
     
-    init(code: String?, message: String?) {
+    public init(code: String?, message: String?) {
         self.code = code
         self.message = message
     }

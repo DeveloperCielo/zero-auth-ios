@@ -1,3 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/CieloOAuth/CieloOAuth.framework
-${BUILT_PRODUCTS_DIR}/CieloZeroAuth/CieloZeroAuth.framework
+${BUILT_PRODUCTS_DIR}/ZeroAuthCielo/ZeroAuthCielo.framework

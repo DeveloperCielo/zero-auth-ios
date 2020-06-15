@@ -198,11 +198,11 @@ fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CieloOAuth/CieloOAuth.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CieloZeroAuth/CieloZeroAuth.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZeroAuthCielo/ZeroAuthCielo.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/CieloOAuth/CieloOAuth.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/CieloZeroAuth/CieloZeroAuth.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ZeroAuthCielo/ZeroAuthCielo.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

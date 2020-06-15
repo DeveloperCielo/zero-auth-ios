@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "04587D797B23B0F088391B7C260631ED"
-               BuildableName = "CieloZeroAuth.framework"
-               BlueprintName = "CieloZeroAuth"
+               BlueprintIdentifier = "431F6884F5C643E9DF34809124B3E971"
+               BuildableName = "ZeroAuthCielo.framework"
+               BlueprintName = "ZeroAuthCielo"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

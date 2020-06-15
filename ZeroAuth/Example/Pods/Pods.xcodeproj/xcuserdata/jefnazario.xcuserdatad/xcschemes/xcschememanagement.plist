@@ -11,14 +11,14 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>CieloZeroAuth.xcscheme</key>
+		<key>Pods-Example.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Pods-Example.xcscheme</key>
+		<key>ZeroAuthCielo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

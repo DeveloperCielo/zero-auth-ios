@@ -1,6 +1,0 @@
-framework module CieloZeroAuth {
-  umbrella header "CieloZeroAuth-umbrella.h"
-
-  export *
-  module * { export * }
-}

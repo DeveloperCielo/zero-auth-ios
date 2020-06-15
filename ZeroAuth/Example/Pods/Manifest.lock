@@ -1,20 +1,20 @@
 PODS:
   - CieloOAuth (1.0.6)
-  - CieloZeroAuth (0.0.3):
+  - ZeroAuthCielo (0.0.5):
     - CieloOAuth
 
 DEPENDENCIES:
-  - CieloZeroAuth
+  - ZeroAuthCielo
 
 SPEC REPOS:
   trunk:
     - CieloOAuth
-    - CieloZeroAuth
+    - ZeroAuthCielo
 
 SPEC CHECKSUMS:
   CieloOAuth: 49dea63c3bbb70c5de2828812fc4ae502ea5f613
-  CieloZeroAuth: a368720dd859a7dedfcaafed0b593a474df2dd40
+  ZeroAuthCielo: 052844e6fb419180c3abb85db4681aa509172d6b
 
-PODFILE CHECKSUM: 40108e73d87a60863aec9315793b3a82b00b4e56
+PODFILE CHECKSUM: 21be1bda5c7d12ce540fcab21eead9e0f26b0c97
 
 COCOAPODS: 1.9.3

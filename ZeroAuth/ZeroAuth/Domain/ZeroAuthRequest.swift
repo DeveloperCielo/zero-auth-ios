@@ -7,13 +7,13 @@
 //
 
 @objc public class ZeroAuthRequest: NSObject, Codable {
-    var cardType: CardType?
-    var cardNumber: String?
-    var holder: String?
-    var expirationDate: String?
-    var securityCode: String?
-    var saveCard: Bool?
-    var brand: String?
-    var cardOnFile: CardOnFile?
-    var cardToken: String?
+    public var cardType: CardType?
+    public var cardNumber: String?
+    public var holder: String?
+    public var expirationDate: String?
+    public var securityCode: String?
+    public var saveCard: Bool?
+    public var brand: String?
+    public var cardOnFile: CardOnFile?
+    public var cardToken: String?
 }
