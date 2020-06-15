@@ -36,7 +36,7 @@ import CieloOAuth
         zeroAuthClient = ZeroAuthClient(merchantId: merchantId, environment: environment)
     }
     
-    public static func instance(merchanId: String, clientId: String, clientSecret: String, environment: Environment = .production) -> ZeroAuth {
+    static func instance(merchanId: String, clientId: String, clientSecret: String, environment: Environment = .production) -> ZeroAuth {
         return ZeroAuth(merchantId: merchanId, clientId: clientId, clientSecret: clientSecret, environment: environment)
     }
     

@@ -7,14 +7,27 @@
 //
 
 import UIKit
+import CieloZeroAuth
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
+    
+    var zeroAuth: ZeroAuth!
+    
+    @IBOutlet weak var holderName: UITextField!
+    @IBOutlet weak var cardNumber: UITextField!
+    @IBOutlet weak var expirationDate: UITextField!
+    @IBOutlet weak var cvv: UITextField!
+    @IBOutlet weak var brand: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        zeroAuth = 
     }
 
-
+    
+    @IBAction func verifyTouched(_ sender: UIButton) {
+        
+    }
 }
 
