@@ -33,12 +33,17 @@
             return
         }
         
-        var request = URLRequest(url: url)
-        request.allHTTPHeaderFields = ["Authorization": "Bearer \(token)", "merchantId": merchantId]
+        var urlRequest = URLRequest(url: url)
+        urlRequest.allHTTPHeaderFields = ["Authorization": "Bearer \(token)", "merchantId": merchantId, "Content-Type": "application/json"]
+        urlRequest.httpMethod = "POST"
         
-        request.httpMethod = "POST"
+        guard let postData = try? JSONEncoder().encode(request) else {
+            completion(nil, [ErrorResponse(code: "00", message: "The request should have a body")])
+            return
+        }
+        urlRequest.httpBody = postData
         
-        let task = session.dataTask(with: request, completionHandler: { (result, _, error) in
+        let task = session.dataTask(with: urlRequest, completionHandler: { (result, _, error) in
             
             #if DEBUG
             debugPrint("Result:\n\(String(data: result ?? Data(), encoding: .utf8) ?? "sem result")")
@@ -53,9 +58,9 @@
                 return
             }
             
+            let decoder = JSONDecoder()
+            
             do {
-                let decoder = JSONDecoder()
-                
                 let decodableData = try decoder.decode(ZeroAuthResponse.self, from: data)
                 
                 debugPrint(decodableData)
@@ -64,8 +69,17 @@
                     completion(decodableData, nil)
                 }
             } catch let exception {
-                debugPrint("Exception: \(exception)")
-                completion(nil, [ErrorResponse(code: nil, message: exception.localizedDescription)])
+                guard error != nil else {
+                    debugPrint("Exception: \(exception)")
+                    completion(nil, [ErrorResponse(code: nil, message: exception.localizedDescription)])
+                    return
+                }
+                
+                let decodableError = try? decoder.decode([ErrorResponse].self, from: data)
+                
+                DispatchQueue.main.async {
+                    completion(nil, decodableError)
+                }
             }
         })
         
