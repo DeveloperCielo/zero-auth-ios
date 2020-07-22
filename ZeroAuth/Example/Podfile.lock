@@ -1,6 +1,6 @@
 PODS:
   - CieloOAuth (1.0.6)
-  - ZeroAuthCielo (0.0.5):
+  - ZeroAuthCielo (0.0.6):
     - CieloOAuth
 
 DEPENDENCIES:
@@ -13,7 +13,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   CieloOAuth: 49dea63c3bbb70c5de2828812fc4ae502ea5f613
-  ZeroAuthCielo: 052844e6fb419180c3abb85db4681aa509172d6b
+  ZeroAuthCielo: 426c3723cd641a6d3a88efc5504566b4cd05d770
 
 PODFILE CHECKSUM: 21be1bda5c7d12ce540fcab21eead9e0f26b0c97
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TQE-zo-cyN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,13 +10,13 @@
         <!--View Controller-->
         <scene sceneID="bsY-st-IQg">
             <objects>
-                <tableViewController id="TQE-zo-cyN" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="TQE-zo-cyN" customClass="ViewController" customModule="ZeroAuth" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="iUH-jz-u9e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="wzY-Yw-1Mf">
-                            <rect key="frame" x="0.0" y="627.5" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="827.5" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
@@ -185,16 +185,48 @@
                                                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="fGM-Zb-xT6"/>
-                                                        <constraint firstAttribute="width" constant="200" id="lxH-pJ-dHi"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="lxH-pJ-dHi"/>
                                                     </constraints>
                                                     <state key="normal" title="Verify">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="verifyTouched:" destination="TQE-zo-cyN" eventType="touchUpInside" id="Omk-wg-BvC"/>
+                                                    </connections>
                                                 </button>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="AyO-jy-914">
+                                                    <rect key="frame" x="188.5" y="91.5" width="37" height="37"/>
+                                                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Wfv-5B-byf" secondAttribute="bottom" constant="22" id="K5d-if-Y6a"/>
+                                                <constraint firstItem="AyO-jy-914" firstAttribute="centerX" secondItem="6f4-DQ-loo" secondAttribute="centerX" id="K8k-mi-2cp"/>
                                                 <constraint firstItem="Wfv-5B-byf" firstAttribute="centerX" secondItem="6f4-DQ-loo" secondAttribute="centerX" id="Zdu-v8-cn4"/>
+                                                <constraint firstItem="AyO-jy-914" firstAttribute="centerY" secondItem="Wfv-5B-byf" secondAttribute="centerY" id="ePT-OV-fbw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="PNE-be-IAt">
+                                        <rect key="frame" x="0.0" y="609.5" width="414" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PNE-be-IAt" id="Bek-xb-ZAc">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aeL-oU-bAq">
+                                                    <rect key="frame" x="16" y="16" width="382" height="168"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aeL-oU-bAq" firstAttribute="top" secondItem="Bek-xb-ZAc" secondAttribute="top" constant="16" id="Iet-7i-SYo"/>
+                                                <constraint firstItem="aeL-oU-bAq" firstAttribute="leading" secondItem="Bek-xb-ZAc" secondAttribute="leading" constant="16" id="QcP-Oq-8B9"/>
+                                                <constraint firstAttribute="bottom" secondItem="aeL-oU-bAq" secondAttribute="bottom" constant="16" id="gQG-xv-Dja"/>
+                                                <constraint firstAttribute="trailing" secondItem="aeL-oU-bAq" secondAttribute="trailing" constant="16" id="jsK-ea-INU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -208,10 +240,13 @@
                     </tableView>
                     <connections>
                         <outlet property="brand" destination="svp-VA-UGw" id="bC5-XO-uCI"/>
+                        <outlet property="btnVerify" destination="Wfv-5B-byf" id="SIQ-Wb-xtT"/>
                         <outlet property="cardNumber" destination="Ppg-gx-kE3" id="CYr-e4-ZFE"/>
                         <outlet property="cvv" destination="Vgj-mz-qsL" id="1Rl-ST-jFS"/>
                         <outlet property="expirationDate" destination="k1z-cV-7wa" id="ZV7-C0-3IV"/>
                         <outlet property="holderName" destination="0nB-k0-QcY" id="zOm-fC-OiQ"/>
+                        <outlet property="loading" destination="AyO-jy-914" id="g4L-Ku-IRO"/>
+                        <outlet property="textResult" destination="aeL-oU-bAq" id="oDw-0J-3GO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0a-aU-LQ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
