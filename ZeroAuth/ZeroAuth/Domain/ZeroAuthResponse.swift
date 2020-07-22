@@ -7,15 +7,15 @@
 //
 
 @objc public class ZeroAuthResponse: NSObject, Codable {
-    var valid: Bool
-    var returnCode: String
-    var returnMessage: String
-    var issuerTransactionId: String
+    var Valid: Bool
+    var ReturnCode: String
+    var ReturnMessage: String
+    var issuerTransactionId: String?
     
-    init(valid: Bool, returnCode: String, returnMessage: String, issuerTransactionId: String) {
-        self.valid = valid
-        self.returnCode = returnCode
-        self.returnMessage = returnMessage
+    init(valid: Bool, returnCode: String, returnMessage: String, issuerTransactionId: String?) {
+        self.Valid = valid
+        self.ReturnCode = returnCode
+        self.ReturnMessage = returnMessage
         self.issuerTransactionId = issuerTransactionId
     }
 }
