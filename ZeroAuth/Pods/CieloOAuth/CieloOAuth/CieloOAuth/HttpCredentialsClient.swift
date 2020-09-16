@@ -9,9 +9,6 @@
 import Foundation
 
 public protocol CredentialsClient {
-//    var environment: Environment { get }
-//    var clientId: String { get }
-//    var clientSecret: String { get }
     func getOAuthCredentials(completion: @escaping (AccessToken?, String?) -> Void)
 }
 
@@ -24,11 +21,6 @@ public protocol CredentialsClient {
         self.clientId = clientId
         self.clientSecret = clientSecret
         self.environment = environment
-        
-        /*
-         "df66638b-3ef4-421f-a18e-e20dea38d97d",
-         "q13XZ48haFg4EhAS2cjcoyX7OzRECYysY6T9TJLmKNM="
-         */
     }
     
     public func getOAuthCredentials(completion: @escaping (AccessToken?, String?) -> Void) {
@@ -63,7 +55,7 @@ public protocol CredentialsClient {
     
     private func getUrl(for environment: Environment) -> String {
         return environment == .production
-            ? "https://cieloecommerce.cielo.com.br/api/public/v2/token/"
-            : "https://meucheckoutsandbox.braspag.com.br/api/public/v2/token"
+            ? "https://auth.braspag.com.br/oauth2/token"
+            : "https://authsandbox.cieloecommerce.cielo.com.br/oauth2/token/"
     }
 }

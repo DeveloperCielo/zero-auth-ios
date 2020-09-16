@@ -31,9 +31,23 @@ protocol ApiProtocol {
         var urlRequest: URLRequest?
             urlRequest = URLRequest(url: URL(string: url)!)
         
-        let credentials = parameters?["credentials"]
-        urlRequest?.allHTTPHeaderFields = ["Authorization": "Basic \(credentials ?? "")"]
+        let sdkName = "CieloOAuth-iOS"
+        guard let bundle = Bundle(identifier: "com.jnazario.CieloOAuth") else {
+            completion(nil, "Não foi possível obter o número da versão para registro no servidor.")
+            return
+        }
         
+        guard let buildVersion = bundle.infoDictionary?["CFBundleShortVersionString"] as? String else {
+            completion(nil, "Não foi possível obter o número da versão para registro no servidor.")
+            return
+        }
+        
+        let credentials = parameters?["credentials"]
+        urlRequest?.allHTTPHeaderFields = [
+            "Authorization": "Basic \(credentials ?? "")",
+            "x-sdk-version": "\(sdkName)@\(buildVersion)"
+        ]
+
         let postData = "grant_type=client_credentials".data(using: .utf8)
         urlRequest?.httpBody = postData
         
@@ -72,5 +86,9 @@ protocol ApiProtocol {
         } else {
             completion(nil, "Não foi possível executar a chamada à API")
         }
+    }
+    
+    func makeRequest(urlRequest: URLRequest, completion: @escaping (Bool) -> Void) {
+        
     }
 }
