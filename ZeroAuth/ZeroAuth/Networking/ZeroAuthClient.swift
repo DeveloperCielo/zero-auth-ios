@@ -40,12 +40,12 @@
         let sdkName = "CieloZeroAuth-iOS"
         
         guard let bundle = Bundle(identifier: "com.jnazario.ZeroAuth") else {
-            completion(nil, "Não foi possível obter o número da versão para registro no servidor.")
+            completion(nil, [ErrorResponse(code: nil, message: "Não foi possível obter o número da versão para registro no servidor.")])
             return
         }
 
         guard let buildVersion = bundle.infoDictionary?["CFBundleShortVersionString"] as? String else {
-            completion(nil, "Não foi possível obter o número da versão para registro no servidor.")
+            completion(nil, [ErrorResponse(code: nil, message: "Não foi possível obter o número da versão para registro no servidor.")])
             return
         }
         
