@@ -37,6 +37,20 @@
         urlRequest.allHTTPHeaderFields = ["Authorization": "Bearer \(token)", "merchantId": merchantId, "Content-Type": "application/json"]
         urlRequest.httpMethod = "POST"
         
+        let sdkName = "CieloZeroAuth-iOS"
+        
+        guard let bundle = Bundle(identifier: "com.jnazario.ZeroAuth") else {
+            completion(nil, "Não foi possível obter o número da versão para registro no servidor.")
+            return
+        }
+
+        guard let buildVersion = bundle.infoDictionary?["CFBundleShortVersionString"] as? String else {
+            completion(nil, "Não foi possível obter o número da versão para registro no servidor.")
+            return
+        }
+        
+        urlRequest.addValue("\(sdkName)@\(buildVersion)", forHTTPHeaderField: "x-sdk-version")
+        
         guard let postData = try? JSONEncoder().encode(request) else {
             completion(nil, [ErrorResponse(code: "00", message: "The request should have a body")])
             return
