@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "ZeroAuthCielo"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "Biblioteca de validação de cartões de crédito"
 
   spec.description  = <<-DESC
